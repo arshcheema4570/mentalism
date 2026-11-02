@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#142a2b">
+  <meta name="description" content="Daily practice in attention, evidence, psychology, and clear strategic thinking.">
+  <title>Mindcraft — Observation Training</title>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="/icons/mark.svg">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div id="offline-banner" class="offline-banner" hidden><span class="status-dot"></span> Offline mode — your saved practice is still here.</div>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Mindcraft home">
+        <span class="brand-mark" aria-hidden="true"><span></span><i></i></span>
+        <span class="brand-copy"><strong>mindcraft</strong><small>FIELD NOTES FOR THE MIND</small></span>
+      </a>
+      <div class="side-label">YOUR TRAINING</div>
+      <nav class="primary-nav">
+        <button class="nav-item active" data-view="home"><span class="nav-glyph">01</span>Overview</button>
+        <button class="nav-item" data-view="practice"><span class="nav-glyph">02</span>Daily practice</button>
+        <button class="nav-item" data-view="curriculum"><span class="nav-glyph">03</span>Skill paths</button>
+        <button class="nav-item" data-view="progress"><span class="nav-glyph">04</span>Progress</button>
+        <button class="nav-item" data-view="fieldguide"><span class="nav-glyph">05</span>Field guide</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-note"><span class="note-stamp">!</span><p>Notice carefully.<br><em>Conclude cautiously.</em></p></div>
+        <div class="local-note"><span class="local-dot"></span> Progress saved on this device</div>
+        <span class="sidebar-version">MINDCRAFT / VOL. 01</span>
+      </div>
+    </aside>
+
+    <div class="main-column">
+      <header class="topbar">
+        <div class="mobile-brand"><span class="brand-mark mini" aria-hidden="true"><span></span><i></i></span><strong>mindcraft</strong></div>
+        <div class="topbar-context"><span class="eyebrow" id="top-context">DAILY INTELLIGENCE PRACTICE</span><span class="context-divider"></span><span id="today-date" class="date-label"></span></div>
+        <div class="topbar-actions">
+          <div class="streak-chip" aria-label="Current practice streak"><span class="streak-symbol" aria-hidden="true">✳</span><strong id="streak-value">0</strong><span>day streak</span></div>
+          <button id="install-button" class="install-button" hidden>Install app <span aria-hidden="true">↗</span></button>
+          <button id="install-help" class="icon-button" aria-label="How to install this app" title="Install help">＋</button>
+        </div>
+      </header>
+
+      <main id="view-root" class="view-root" tabindex="-1" aria-live="polite"></main>
+      <nav class="mobile-nav" aria-label="Main navigation">
+        <button class="active" data-view="home"><span>01</span>Home</button>
+        <button data-view="practice"><span>02</span>Practice</button>
+        <button data-view="curriculum"><span>03</span>Paths</button>
+        <button data-view="progress"><span>04</span>Progress</button>
+        <button data-view="fieldguide"><span>05</span>Guide</button>
+      </nav>
+    </div>
+  </div>
+  <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+  <div id="update-prompt" class="update-prompt" hidden><span>A new field guide is ready.</span><button id="update-now">Refresh</button><button id="dismiss-update" aria-label="Dismiss">×</button></div>
+  <script src="/content.js" defer></script>
+  <script src="/app.js" defer></script>
+</body>
+</html>
