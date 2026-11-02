@@ -117,7 +117,7 @@
     const score = averageFor(track), tries = trackAttemptCount(track), level = trackLevel(track);
     let preferred = level >= 3 && score >= 67 ? 3 : level >= 2 && score >= 60 ? 2 : 1;
     if (tries >= 2 && score < 55) preferred = 1;
-    const matched = choices.filter(item => item.difficulty === preferred);
+    const matched = choices.filter(item => item.difficulty <= preferred);
     const pool = matched.length ? matched : choices;
     return pool[Math.abs(day + (tries >= 2 && score < 55 ? 0 : 1)) % pool.length];
   }

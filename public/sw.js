@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mindcraft-shell-v2';
+const CACHE_NAME = 'mindcraft-shell-v3';
 const APP_SHELL = [
   '/', '/index.html', '/styles.css', '/content.js', '/app.js',
   '/manifest.webmanifest', '/icons/mark.svg', '/icons/icon-192.png', '/icons/icon-512.png'
