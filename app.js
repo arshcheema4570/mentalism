@@ -114,12 +114,10 @@
   function currentChoice(track, day) {
     const choices = C.exercises.filter(item => item.track === track);
     if (choices.length <= 1) return choices[0];
-    const score = averageFor(track), tries = trackAttemptCount(track), level = trackLevel(track);
-    let preferred = level >= 3 && score >= 67 ? 3 : level >= 2 && score >= 60 ? 2 : 1;
-    if (tries >= 2 && score < 55) preferred = 1;
-    const matched = choices.filter(item => item.difficulty <= preferred);
-    const pool = matched.length ? matched : choices;
-    return pool[Math.abs(day + (tries >= 2 && score < 55 ? 0 : 1)) % pool.length];
+    // 30-day cycle: exercises sorted by difficulty (10x L1, 10x L2, 10x L3 per track),
+    // picked by day number mod 30, so each day in a 30-day window is a new exercise.
+    const ordered = [...choices].sort((a, b) => a.difficulty - b.difficulty);
+    return ordered[((day % ordered.length) + ordered.length) % ordered.length];
   }
   function dailyQueue() {
     const day = Math.floor(new Date(`${dateKey()}T12:00:00`).getTime() / 86400000);
