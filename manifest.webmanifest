@@ -1,16 +1,16 @@
 {
-  "id": "/",
+  "id": "./",
   "name": "Mindcraft: Observation Training",
   "short_name": "Mindcraft",
   "description": "Daily practice in attention, evidence, psychology, and clear strategic thinking.",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#f4f2ec",
   "theme_color": "#142a2b",
   "orientation": "any",
   "icons": [
-    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
   ]
 }

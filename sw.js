@@ -1,7 +1,7 @@
 const CACHE_NAME = 'mindcraft-shell-v3';
 const APP_SHELL = [
-  '/', '/index.html', '/styles.css', '/content.js', '/app.js',
-  '/manifest.webmanifest', '/icons/mark.svg', '/icons/icon-192.png', '/icons/icon-512.png'
+'./',  './index.html',  './styles.css',  './content.js',  './app.js',
+   './manifest.webmanifest',  './icons/mark.svg',  './icons/icon-192.png',  './icons/icon-512.png'
 ];
 
 self.addEventListener('install', event => {
@@ -26,9 +26,9 @@ self.addEventListener('fetch', event => {
   if (request.mode === 'navigate') {
     event.respondWith(fetch(request).then(response => {
       const copy = response.clone();
-      caches.open(CACHE_NAME).then(cache => cache.put('/index.html', copy));
+      caches.open(CACHE_NAME).then(cache => cache.put( './index.html', copy));
       return response;
-    }).catch(async () => (await caches.match(request)) || (await caches.match('/index.html'))));
+    }).catch(async () => (await caches.match(request)) || (await caches.match( './index.html'))));
     return;
   }
   event.respondWith(caches.match(request).then(cached => cached || fetch(request).then(response => {

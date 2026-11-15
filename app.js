@@ -268,7 +268,7 @@
     $('#update-now').addEventListener('click',()=>{if(waitingWorker)waitingWorker.postMessage('SKIP_WAITING');else location.reload();});
     $('#dismiss-update').addEventListener('click',()=>$('#update-prompt').hidden=true);
     if('serviceWorker' in navigator && location.protocol !== 'file:') {
-      navigator.serviceWorker.register('/sw.js').then(reg=>{
+      navigator.serviceWorker.register('./sw.js').then(reg=>{
         if(reg.waiting) showUpdate(reg.waiting);
         reg.addEventListener('updatefound',()=>{const worker=reg.installing;if(!worker)return;worker.addEventListener('statechange',()=>{if(worker.state==='installed' && navigator.serviceWorker.controller)showUpdate(worker);});});
       }).catch(()=>toast('Offline storage is unavailable in this browser; you can still use the app online.'));
